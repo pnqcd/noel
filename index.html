@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="image_src" 
+      type="image/jpeg" 
+      href="./nen.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Đóng tab là đồng ý :))</title>
+    <style>
+        body {
+            background-color: #ff4929;
+            margin: 0;
+            padding: 0;
+            box-sizing: none;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .ring1 {
+            width: 10%;
+            position: fixed;
+            top: 0;
+            left: 50px;
+        }
+        .ring2 {
+            width: 10%;
+            position: fixed;
+            top: 0;
+            right: 50px;
+        }
+        .pine {
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+        }
+        .santa {
+            width: 400px;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            /* transform: rotate(-45deg); */
+        }
+        .snow-container { 
+            position: fixed; 
+            width: 100%; 
+            max-width: 100%; 
+            z-index: 99999; 
+            pointer-events: none; 
+            overflow: hidden; 
+            top: 0; height: 100%; 
+        } 
+        .snow { 
+            display: block; 
+            position: absolute; 
+            z-index: 2; 
+            top: 0; 
+            right: 0; 
+            bottom: 0; 
+            left: 0; 
+            pointer-events: 
+            none; -webkit-transform: translate3d(0,-100%,0); 
+            transform: translate3d(0,-100%,0); 
+            -webkit-animation: snow linear infinite; 
+            animation: snow linear infinite; 
+        } 
+        .snow.foreground { 
+            background-image: url("https://itexpress.vn/API/files/img/snow-medium.png"); 
+            -webkit-animation-duration: 15s; animation-duration: 10s; 
+        } 
+        .snow.foreground.layered { 
+            -webkit-animation-delay: 7.5s; 
+            animation-delay: 7.5s; 
+        } 
+        .snow.middleground { 
+            background-image: url(https://itexpress.vn/API/files/img/snow-medium.png); 
+            -webkit-animation-duration: 20s; 
+            animation-duration: 15s; 
+        } 
+        .snow.middleground.layered { 
+            -webkit-animation-delay: 10s; 
+            animation-delay: 10s; 
+        } 
+        .snow.background { 
+            background-image: url(https://itexpress.vn/API/files/img/snow-medium.png); 
+            -webkit-animation-duration: 25s; 
+            animation-duration: 20s; 
+        } 
+        .snow.background.layered { 
+            -webkit-animation-delay: 12.5s; 
+            animation-delay: 12.5s; 
+        } 
+        @-webkit-keyframes snow { 
+            0% { 
+                -webkit-transform: translate3d(0,-100%,0); 
+                transform: translate3d(0,-100%,0); 
+            } 
+            100% { 
+                -webkit-transform: translate3d(5%,100%,0); 
+                transform: translate3d(5%,100%,0); 
+            } 
+        }
+        @keyframes snow { 
+            0% { 
+                -webkit-transform: translate3d(0,-100%,0); 
+                transform: translate3d(0,-100%,0); 
+            } 
+            100% { 
+                -webkit-transform: translate3d(5%,100%,0); 
+                transform: translate3d(5%,100%,0); 
+            } 
+        } 
+        .ask p {
+            text-align: center;
+            font-size: 40px;
+            font-family: 'Pacifico', cursive;
+            color: white;
+            margin-top: 170px;
+        }
+
+        .ans {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            background-color: green;
+            padding: 10px 20px;
+            font-size: 20px;
+            font-family: 'Pacifico', cursive;
+            border-radius: 15px;
+            /* border: black solid 1px; */
+            border: none;
+            z-index: 11;
+        }
+        #yes {
+            position: absolute;
+            top: 280px;
+            left: 580px;
+        }
+        #no {
+            position: absolute;
+            top: 280px;
+            left: 750px;
+            transition: 0.1s;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        .move {
+            transform: translate(200%, 200%);
+            transition: 0.1s;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="ask">
+        <p>
+            Noel này đi chơi với tui nha 
+            <span>&#128540;</span>
+        </p>
+    </div>
+
+        <button id="yes">
+            <a href="https://m.me/impnq" target="_blank">Đồng ý</a>
+            <span>&#10084;&#65039;</span>
+        </button>
+
+        <button id="no">
+            Không 
+            <span>&#128545;</span>
+        </button>
+
+
+    <img class="pine" src="./caythong.png" alt="Cây thông" />
+    <img class="santa" src="./onggianoel.svg" alt="Ông già Noel" />
+    <img class="ring1" src="./chuong.png" alt="Cái chuông" />
+    <img class="ring2" src="./chuong.png" alt="Cái chuông" />
+
+
+    <script type="text/javascript">
+        document.write('<div class="snow-container"> <div class="snow foreground"></div> <div class="snow foreground layered"></div> <div class="snow middleground"></div> <div class="snow middleground layered"></div> <div class="snow background"></div> <div class="snow background layered"></div></div>');
+        var yes = document.getElementById('yes');
+        var no = document.getElementById('no');
+
+        yes.onclick = function() {
+            alert('Phải giữ lời hứa đó nhen ^^');
+        }
+
+        no.onmouseenter = function() {
+            var x = Math.random() * (1000 - 30) + 30;
+            var y = Math.random() * (600 - 30) + 30;
+            var left = x + 'px'
+            var top = y + 'px'
+            no.style.left = left
+            no.style.top = top
+        }
+    </script>
+  </body>
+</html>
